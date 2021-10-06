@@ -1,8 +1,11 @@
 import { RouterLocation } from '@vaadin/router';
 import { makeAutoObservable } from 'mobx';
+import { CrmStore } from "./crm-store";
 
 export class AppStore {
   applicationName = 'Vaadin Todo';
+
+  crmStore = new CrmStore();
 
   // The location, relative to the base path, e.g. "hello" when viewing "/hello"
   location = '';
@@ -25,3 +28,4 @@ export class AppStore {
   }
 }
 export const appStore = new AppStore();
+export const crmStore = appStore.crmStore;
